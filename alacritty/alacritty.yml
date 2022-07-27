@@ -56,10 +56,6 @@ schemes:
       - { index: 16, color: '0xb15c00' }
       - { index: 17, color: '0xc64343' }
 
-    cursor:
-      text: '#d4d4d4'
-      cursor: '#d4d4d4'
-
   codedark: &dark
 
     # Default colors
@@ -92,10 +88,6 @@ schemes:
     indexed_colors:
       - { index: 16, color: '0xff9e64' }
       - { index: 17, color: '0xdb4b4b' }
-        
-    cursor:
-      text: '#d4d4d4'
-      cursor: '#d4d4d4'
 
 colors: *dark
 
