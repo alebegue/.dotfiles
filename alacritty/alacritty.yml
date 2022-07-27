@@ -1,5 +1,5 @@
 # Add symbolic link with PowerShell
-# New-Item -ItemType SymbolicLink -Path $env:APPDATA\alacritty\alacritty.yml -Target "%env:HOMEPATH\Documents\repos\.dotfiles\alacritty\alacritty.yml"
+# New-Item -ItemType SymbolicLink -Path $env:APPDATA\alacritty\alacritty.yml -Target "$env:HOMEPATH\Documents\repos\.dotfiles\alacritty\alacritty.yml"
 
 window:
   padding:
