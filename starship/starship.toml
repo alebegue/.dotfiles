@@ -1,3 +1,6 @@
+# Add symbolic link with PowerShell
+# New-Item -ItemType SymbolicLink -Path $env:HOMEPATH\.starship\config.toml -Target "$env:HOMEPATH\Documents\repos\.dotfiles\starship\starship.toml"
+
 format = "$all"
 
 # Wait 10 milliseconds for starship to check files under the current directory.
