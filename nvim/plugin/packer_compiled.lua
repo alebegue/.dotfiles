@@ -104,6 +104,16 @@ _G.packer_plugins = {
     path = "/home/alebegue/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
   },
+  neoformat = {
+    loaded = true,
+    path = "/home/alebegue/.local/share/nvim/site/pack/packer/start/neoformat",
+    url = "https://github.com/sbdchd/neoformat"
+  },
+  neogit = {
+    loaded = true,
+    path = "/home/alebegue/.local/share/nvim/site/pack/packer/start/neogit",
+    url = "https://github.com/TimUntersberger/neogit"
+  },
   ["nvim-cmp"] = {
     loaded = true,
     path = "/home/alebegue/.local/share/nvim/site/pack/packer/start/nvim-cmp",

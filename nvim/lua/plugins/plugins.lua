@@ -3,6 +3,8 @@ vim.cmd [[packadd packer.nvim]]
 return require("packer").startup(function()
     use("wbthomason/packer.nvim")
 
+    use("sbdchd/neoformat")
+
     use("folke/tokyonight.nvim")
 
     use("kyazdani42/nvim-web-devicons")
