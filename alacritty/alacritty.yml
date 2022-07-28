@@ -97,7 +97,7 @@ cursor:
     blinking: On
 
 shell:
-  program: ubuntu
-  #program: pwsh.exe
-  #args:
-  #  - --login
+  #program: ubuntu
+  program: pwsh.exe
+  args:
+    - --login
