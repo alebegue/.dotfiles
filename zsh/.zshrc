@@ -62,3 +62,6 @@ eval "$(pyenv init -)"
 # Aliases
 alias vim="nvim"
 alias vi="nvim"
+
+# Load virtualenv autodetect
+source ~/.virtualenv-autodetect.sh
