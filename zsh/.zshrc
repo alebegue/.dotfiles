@@ -21,15 +21,17 @@ plugins=()
 source $ZSH/oh-my-zsh.sh
 
 # Tmux configuration
-if command -v tmux>/dev/null; then
-    [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && tmux new-session -A -s main
-fi
+#if command -v tmux>/dev/null; then
+#    [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && tmux new-session -A -s main
+#fi
 
 # Function to change color scheme
 function set_color_scheme() {
     theme=$1
     sed -i "s/colors: \*.[A-z].*/colors: \*$theme/g" /mnt/c/Users/AdrienLebegue/Documents/repos/.dotfiles/alacritty/alacritty.yml &&
-    tmux source-file ~/.tmux_$theme.conf;
+    if [[ -n $TMUX ]]; then
+        tmux source-file ~/.tmux_$theme.conf;
+    fi
     if [ "$theme" = "light" ];
     then
         sed -i 's/vim.g.tokyonight_style = .*/vim.g.tokyonight_style = "day"/g' ~/projects/.dotfiles/nvim/after/plugin/colors.lua
@@ -44,7 +46,7 @@ theme=$(sed -n "s/colors: \*\([A-z]*\).*/\1/p" /mnt/c/Users/AdrienLebegue/Docume
 #export THEME="$(cat /mnt/c/Users/AdrienLebegue/Documents/repos/.dotfiles/alacritty/alacritty.yml | grep -oP '(?<=colors:\ \*).*[A-z]')"
 set_color_scheme $theme
 
-# Switch between light and dark themes for Tmux
+# Switch between light and dark themes 
 alias ol="set_color_scheme light;"
 alias od="set_color_scheme dark;"
 
