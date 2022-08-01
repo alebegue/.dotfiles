@@ -94,6 +94,11 @@ _G.packer_plugins = {
     path = "/home/alebegue/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
+  ["csv.vim"] = {
+    loaded = true,
+    path = "/home/alebegue/.local/share/nvim/site/pack/packer/start/csv.vim",
+    url = "https://github.com/chrisbra/csv.vim"
+  },
   ["lspkind-nvim"] = {
     loaded = true,
     path = "/home/alebegue/.local/share/nvim/site/pack/packer/start/lspkind-nvim",
@@ -154,6 +159,11 @@ _G.packer_plugins = {
     path = "/home/alebegue/.local/share/nvim/site/pack/packer/start/rust-tools.nvim",
     url = "https://github.com/simrat39/rust-tools.nvim"
   },
+  ["spellsitter.nvim"] = {
+    loaded = true,
+    path = "/home/alebegue/.local/share/nvim/site/pack/packer/start/spellsitter.nvim",
+    url = "https://github.com/lewis6991/spellsitter.nvim"
+  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/home/alebegue/.local/share/nvim/site/pack/packer/start/telescope.nvim",
@@ -163,6 +173,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/alebegue/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
     url = "https://github.com/folke/tokyonight.nvim"
+  },
+  ["vim-gitgutter"] = {
+    loaded = true,
+    path = "/home/alebegue/.local/share/nvim/site/pack/packer/start/vim-gitgutter",
+    url = "https://github.com/airblade/vim-gitgutter"
   }
 }
 

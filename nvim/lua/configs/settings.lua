@@ -15,7 +15,9 @@ vim.opt.smartindent = true
 
 vim.opt.wrap = true
 vim.opt.linebreak = true
-vim.cmd([[set listchars+=precedes:<,extends:>]])
+vim.opt.list = true
+vim.cmd([[set listchars+=tab:>-,trail:~,extends:>,precedes:<,lead:·]])
+-- vim.cmd([[set listchars+=eol:¬,tab:>-,trail:~,extends:>,precedes:<,lead:·]])
 
 vim.opt.swapfile = false
 vim.opt.backup = false
@@ -44,3 +46,6 @@ vim.opt.shortmess:append("c")
 vim.opt.colorcolumn = "80"
 
 vim.opt.completeopt = {"menu", "menuone", "noselect"}
+
+vim.opt.spell = true
+vim.opt.spelllang = { "en_us", "fr" }
