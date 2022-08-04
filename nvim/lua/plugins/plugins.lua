@@ -4,6 +4,7 @@ return require("packer").startup(function()
     use("wbthomason/packer.nvim")
 
     use("sbdchd/neoformat")
+    use("tomtom/tcomment_vim")
 
     use("folke/tokyonight.nvim")
 

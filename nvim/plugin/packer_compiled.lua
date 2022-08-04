@@ -164,6 +164,11 @@ _G.packer_plugins = {
     path = "/home/alebegue/.local/share/nvim/site/pack/packer/start/spellsitter.nvim",
     url = "https://github.com/lewis6991/spellsitter.nvim"
   },
+  tcomment_vim = {
+    loaded = true,
+    path = "/home/alebegue/.local/share/nvim/site/pack/packer/start/tcomment_vim",
+    url = "https://github.com/tomtom/tcomment_vim"
+  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/home/alebegue/.local/share/nvim/site/pack/packer/start/telescope.nvim",
