@@ -57,17 +57,17 @@ cmp.setup({
         documentation = cmp.config.window.bordered(),
     },
     mapping = {
-        ['<C-n>'] = cmp.mapping(cmp.mapping.select_next_item(), { 'i', 'c' }),
-        ['<C-p>'] = cmp.mapping(cmp.mapping.select_prev_item(), { 'i', 'c' }),
-        ['<C-M-k>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
-        ['<C-M-j>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
-        ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
-        ['<C-y>'] = cmp.config.disable,
-        ['<C-e>'] = cmp.mapping({
+        ["<C-n>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "c" }),
+        ["<C-p>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "c" }),
+        ["<C-M-k>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
+        ["<C-M-j>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
+        ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
+        ["<C-y>"] = cmp.config.disable,
+        ["<C-e>"] = cmp.mapping({
             i = cmp.mapping.abort(),
             c = cmp.mapping.close(),
         }),
-        ['<CR>'] = cmp.mapping.confirm({ select = false }),
+        ["<CR>"] = cmp.mapping.confirm({ select = false }),
     },
     formatting = {
         format = function(entry, vim_item)
@@ -102,9 +102,9 @@ local function on_attach()
     nnoremap("gd", function() vim.lsp.buf.definition() end)
     nnoremap("K", function() vim.lsp.buf.hover() end)
     nnoremap("<leader>vws", function() vim.lsp.buf.workspace_symbol() end)
-    nnoremap("<leader>vd", function() vim.diagnostic.open_float(nil, {border='rounded'}) end)
-    nnoremap("[d", function() vim.diagnostic.goto_next({float={border='rounded'}}) end)
-    nnoremap("]d", function() vim.diagnostic.goto_prev({float={border='rounded'}}) end)
+    nnoremap("<leader>vd", function() vim.diagnostic.open_float(nil, {border="rounded"}) end)
+    nnoremap("[d", function() vim.diagnostic.goto_next({float={border="rounded"}}) end)
+    nnoremap("]d", function() vim.diagnostic.goto_prev({float={border="rounded"}}) end)
     nnoremap("<leader>vca", function() vim.lsp.buf.code_action() end)
     nnoremap("<leader>vrr", function() vim.lsp.buf.references() end)
     nnoremap("<leader>vrn", function() vim.lsp.buf.rename() end)
@@ -119,7 +119,18 @@ local function config(_config)
 end
 
 -- Setup Python
-require("lspconfig").pyright.setup(config())
+local python_root_files = {
+    ".git",
+    "pyproject.toml",
+    "setup.py",
+    "setup.cfg",
+    "Pipfile",
+    "pyrightconfig.json",
+}
+
+require("lspconfig").pyright.setup(config({
+    root_dir = require("lspconfig").util.root_pattern(unpack(python_root_files)),
+}))
 
 -- Setup Rust
 require("rust-tools").setup({
