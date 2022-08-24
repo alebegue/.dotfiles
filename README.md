@@ -32,6 +32,12 @@ ln -s ~/.dotfiles/.tmux.conf ~/.tmux.conf
 ln -s ~/.dotfiles/python/virtualenv-autodetect.sh ~/.virtualenv-autodetect.sh
 ```
 
+Add following line in  shell config file
+
+```shell
+source ~/.virtualenv-autodetect.sh
+```
+
 ## Neovim
 
 ```shell
