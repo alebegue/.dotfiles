@@ -52,15 +52,18 @@ cmp.setup({
             require("luasnip").lsp_expand(args.body)
         end,
     },
+    view = {
+        entries = {name = "custom", selection_order = "near_cursor" }
+    },
     window = {
-        completion = cmp.config.window.bordered(),
-        documentation = cmp.config.window.bordered(),
+        -- completion = cmp.config.window.bordered(),
+        -- documentation = cmp.config.window.bordered(),
     },
     mapping = {
         ["<C-n>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "c" }),
         ["<C-p>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "c" }),
-        ["<C-M-k>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
-        ["<C-M-j>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
+        ["<C-u>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
+        ["<C-d>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
         ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
         ["<C-y>"] = cmp.config.disable,
         ["<C-e>"] = cmp.mapping({
@@ -86,25 +89,24 @@ cmp.setup({
         end
     },
     sources = cmp.config.sources({
-        { name = "cmp_tabnine" },
-        { name = "nvim_lsp" },
         { name = "luasnip" },
-    }, {
+        { name = "nvim_lsp" },
         { name = "buffer" },
+        { name = "cmp_tabnine" },
     })
 })
 
-vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-    border = "rounded",
-})
+-- vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+--     border = "rounded",
+-- })
 
 local function on_attach()
     nnoremap("gd", function() vim.lsp.buf.definition() end)
     nnoremap("K", function() vim.lsp.buf.hover() end)
     nnoremap("<leader>vws", function() vim.lsp.buf.workspace_symbol() end)
-    nnoremap("<leader>vd", function() vim.diagnostic.open_float(nil, {border="rounded"}) end)
-    nnoremap("[d", function() vim.diagnostic.goto_next({float={border="rounded"}}) end)
-    nnoremap("]d", function() vim.diagnostic.goto_prev({float={border="rounded"}}) end)
+    nnoremap("<leader>vd", function() vim.diagnostic.open_float(nil, {}) end)
+    nnoremap("[d", function() vim.diagnostic.goto_next({float={}}) end)
+    nnoremap("]d", function() vim.diagnostic.goto_prev({float={}}) end)
     nnoremap("<leader>vca", function() vim.lsp.buf.code_action() end)
     nnoremap("<leader>vrr", function() vim.lsp.buf.references() end)
     nnoremap("<leader>vrn", function() vim.lsp.buf.rename() end)
@@ -118,23 +120,68 @@ local function config(_config)
     }, _config or {})
 end
 
--- Setup Python
-local python_root_files = {
-    ".git",
-    "pyproject.toml",
-    "setup.py",
-    "setup.cfg",
-    "Pipfile",
-    "pyrightconfig.json",
+-- Setup Lua
+require("lspconfig").sumneko_lua.setup {
+  on_attach = on_attach,
+  settings = {
+    Lua = {
+      diagnostics = {
+        -- Get the language server to recognize the `vim` global
+        globals = { "vim" },
+      },
+
+      workspace = {
+        -- Make the server aware of Neovim runtime files
+        library = vim.api.nvim_get_runtime_file("", true),
+        checkThirdParty = false
+      },
+    },
+  },
 }
 
-require("lspconfig").pyright.setup(config({
-    root_dir = require("lspconfig").util.root_pattern(unpack(python_root_files)),
+-- Setup Python
+require("lspconfig").pylsp.setup(config({
+    settings = {
+        pylsp = {
+            plugins = {
+                black = {
+                    enabled = true
+                }
+            }
+        }
+    }
 }))
+
+-- local python_root_files = {
+--     ".git",
+--     "pyproject.toml",
+--     "setup.py",
+--     "setup.cfg",
+--     "Pipfile",
+--     "pyrightconfig.json",
+-- }
+--
+-- require("lspconfig").pyright.setup(config({
+--     root_dir = require("lspconfig").util.root_pattern(unpack(python_root_files)),
+--     python = {
+--         analysis = {
+--             autoSearchPaths = true,
+--             diagnosticMode = "workspace",
+--             useLibraryCodeForTypes = true
+--         }
+--     }
+-- }))
 
 -- Setup Rust
 require("rust-tools").setup({
     server = {
         on_attach = on_attach
     }
+})
+
+-- Lspsaga
+local saga = require("lspsaga")
+
+saga.init_lsp_saga({
+    border_style = "double"
 })

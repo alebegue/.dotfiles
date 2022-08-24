@@ -6,7 +6,11 @@ window:
     x: 5
     y: 5
 
-  opacity: 0.95
+  opacity: 0.97
+
+  dimensions:
+    columns: 100
+    lines: 35
 
 font:
   normal:

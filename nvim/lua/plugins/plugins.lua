@@ -20,6 +20,7 @@ return require("packer").startup(function()
     use("TimUntersberger/neogit")
     use("airblade/vim-gitgutter")
     use("nvim-telescope/telescope.nvim")
+    use("nvim-telescope/telescope-file-browser.nvim")
 
     use("nvim-treesitter/nvim-treesitter", {
         run = ":TSUpdate"
@@ -29,6 +30,7 @@ return require("packer").startup(function()
     use("chrisbra/csv.vim")
 
     use("neovim/nvim-lspconfig")
+    use({"glepnir/lspsaga.nvim", branch = "main"})
     use("hrsh7th/cmp-nvim-lsp")
     use("hrsh7th/cmp-buffer")
     use("hrsh7th/nvim-cmp")
