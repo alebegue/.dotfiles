@@ -1,6 +1,3 @@
-# Add symbolic link with PowerShell
-# New-Item -ItemType SymbolicLink -Path $env:HOMEPATH\Documents\PowerShell\Microsoft.PowerShell_profile.ps1 -Target "$env:HOMEPATH\Documents\repos\.dotfiles\PowerShell\Microsoft.PowerShell_profile.ps1"
-
 # Shows navigable menu of all options when hitting Tab
 Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
 
