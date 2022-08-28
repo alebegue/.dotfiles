@@ -1,3 +1,6 @@
+# set Vi key bindings
+fish_vi_key_bindings
+
 # remove greeting message
 set fish_greeting
 
@@ -29,7 +32,7 @@ function set_color_scheme;
     set theme $argv[1]
     sed -i "s/colors: \*.[A\-z].*/colors: \*$theme/g" /mnt/c/Users/AdrienLebegue/Documents/repos/dotfiles/alacritty/alacritty.yml &&
 
-    if [ -n $TMUX ]; tmux source-file ~/.tmux_$theme.conf;
+    if test -n "$TMUX"; tmux source-file ~/.tmux_$theme.conf;
     end
 
     if [ "$theme" = "light" ]; sed -i 's/vim.g.tokyonight_style = .*/vim.g.tokyonight_style = "day"/g' ~/repos/dotfiles/nvim/after/plugin/colors.lua;
@@ -44,8 +47,8 @@ set theme $(sed -n "s/colors: \*\([A\-z]*\).*/\1/p" /mnt/c/Users/AdrienLebegue/D
 set_color_scheme $theme
 
 # switch between light and dark themes 
-alias ol="set_color_scheme light;"
-alias od="set_color_scheme dark;"
+alias ol="set_color_scheme light"
+alias od="set_color_scheme dark"
 
 if status is-interactive
     set -Ux PYENV_ROOT $HOME/.pyenv
