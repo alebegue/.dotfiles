@@ -1,0 +1,32 @@
+#!/bin/bash
+# Change color scheme for Alacritty, Tmux and Neovim
+
+THEME=$1
+
+if [ $# -eq 0 ]
+then
+    echo "Usage: set-color-scheme <dark|light>"
+    exit 1
+fi
+
+if [[ ! $1 =~ ^(dark|light)$ ]]
+then
+    echo "Color schemes available:"
+    echo "  - dark"
+    echo "  - light"
+    exit 1
+fi
+
+sed -i "s/colors: \*.[A\-z].*/colors: \*$THEME/g" /mnt/c/Users/AdrienLebegue/Documents/repos/dotfiles/alacritty/alacritty.yml &&
+
+if [[ -n $TMUX ]]
+then
+    tmux source-file ~/.tmux_$THEME.conf
+fi
+
+if [ "$THEME" = "light" ]
+then
+    sed -i 's/vim.g.tokyonight_style = .*/vim.g.tokyonight_style = "day"/g' ~/repos/dotfiles/nvim/after/plugin/colors.lua
+else
+    sed -i 's/vim.g.tokyonight_style = .*/vim.g.tokyonight_style = "night"/g' ~/repos/dotfiles/nvim/after/plugin/colors.lua
+fi
