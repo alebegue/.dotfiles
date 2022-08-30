@@ -27,32 +27,15 @@ alias rm="rm -i"
 alias df="df -h"
 alias free="free -m"
 
-# function to change color scheme
-function set_color_scheme;
-    set theme $argv[1]
-    sed -i "s/colors: \*.[A\-z].*/colors: \*$theme/g" /mnt/c/Users/AdrienLebegue/Documents/repos/dotfiles/alacritty/alacritty.yml &&
+# set color scheme given Alacritty config file
+set COLOR $(sed -n "s/colors: \*\([A\-z]*\).*/\1/p" /mnt/c/Users/AdrienLebegue/Documents/repos/dotfiles/alacritty/alacritty.yml)
+set-color-scheme $COLOR
 
-    if test -n "$TMUX"; tmux source-file ~/.tmux_$theme.conf;
-    end
-
-    if [ "$theme" = "light" ]; sed -i 's/vim.g.tokyonight_style = .*/vim.g.tokyonight_style = "day"/g' ~/repos/dotfiles/nvim/after/plugin/colors.lua;
-    else; sed -i 's/vim.g.tokyonight_style = .*/vim.g.tokyonight_style = "night"/g' ~/repos/dotfiles/nvim/after/plugin/colors.lua;
-    end
-end
-
-# set THEME environment variable
-#export THEME="dark"
-set theme $(sed -n "s/colors: \*\([A\-z]*\).*/\1/p" /mnt/c/Users/AdrienLebegue/Documents/repos/dotfiles/alacritty/alacritty.yml)
-#export THEME="$(cat /mnt/c/Users/AdrienLebegue/Documents/repos/dotfiles/alacritty/alacritty.yml | grep -oP '(?<=colors:\ \*).*[A-z]')"
-set_color_scheme $theme
-
-# switch between light and dark themes 
-alias ol="set_color_scheme light"
-alias od="set_color_scheme dark"
+# switch between light and dark color schemes
+alias ol="set-color-scheme light"
+alias od="set-color-scheme dark"
 
 if status is-interactive
-    set -Ux PYENV_ROOT $HOME/.pyenv
-    set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths
 end
 
 pyenv init - | source
