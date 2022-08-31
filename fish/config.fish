@@ -27,6 +27,9 @@ alias rm="rm -i"
 alias df="df -h"
 alias free="free -m"
 
+# VS Code
+alias code="/mnt/c/Users/AdrienLebegue/AppData/Local/Programs/Microsoft\ VS\ Code/bin/code"
+
 # set color scheme given Alacritty config file
 set COLOR $(sed -n "s/colors: \*\([A\-z]*\).*/\1/p" /mnt/c/Users/AdrienLebegue/Documents/repos/dotfiles/alacritty/alacritty.yml)
 set-color-scheme $COLOR
