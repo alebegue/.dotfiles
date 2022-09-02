@@ -51,15 +51,3 @@ stow -t $HOME tmux
 ```shell
 stow -t $HOME zsh
 ```
-
-Python virtualenv
-
-```shell
-ln -s ~/repos/dotfiles/python/virtualenv-autodetect.sh ~/.virtualenv-autodetect.sh
-```
-
-Add following line in  shell config file
-
-```shell
-source ~/.virtualenv-autodetect.sh
-```
