@@ -1,5 +1,9 @@
 # My dotfiles
 
+```shell
+sudo apt install stow
+```
+
 ## Alacritty
 
 ```shell
@@ -9,8 +13,19 @@ New-Item -ItemType SymbolicLink -Path $env:APPDATA\alacritty\alacritty.yml -Targ
 ## Bash scripts
 
 ```shell
-ln -s ~/repos/dotfiles/bash/alacritty-opacity ~/.local/bin/
-ln -s ~/repos/dotfiles/bash/set-color-scheme ~/.local/bin/
+stow -t $HOME bash
+```
+
+## Fish shell
+
+```shell
+stow -t $HOME fish
+```
+
+## Neovim
+
+```shell
+stow -t $HOME nvim
 ```
 
 ## PowerShell profile
@@ -22,27 +37,19 @@ New-Item -ItemType SymbolicLink -Path $env:HOMEPATH\Documents\PowerShell\Microso
 ## Starship
 
 ```shell
-ln -s ~/repos/dotfiles/starship/starship.toml ~/.config/starship.toml
+stow -t $HOME starship
 ```
 
 ## Tmux
 
 ```shell
-ln -s ~/repos/dotfiles/tmux/.tmux_light.conf ~/.tmux_light.conf
-ln -s ~/repos/dotfiles/tmux/.tmux_dark.conf ~/.tmux_dark.conf
-ln -s ~/repos/dotfiles/tmux/.tmux.conf ~/.tmux.conf
-```
-
-## Neovim
-
-```shell
-ln -s ~/repos/dotfiles/nvim ~/.config/nvim
+stow -t $HOME tmux
 ```
 
 ## ZSH shell
 
 ```shell
-ln -s ~/repos/dotfiles/zsh/.zshrc ~/.zshrc
+stow -t $HOME zsh
 ```
 
 Python virtualenv
