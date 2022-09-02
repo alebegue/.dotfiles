@@ -22,6 +22,12 @@ stow -t $HOME bash
 stow -t $HOME fish
 ```
 
+## Git
+
+```shell
+stow -t $HOME git
+```
+
 ## Neovim
 
 ```shell
