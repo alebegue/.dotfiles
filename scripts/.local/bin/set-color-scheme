@@ -26,7 +26,7 @@ fi
 
 if [ "$THEME" = "light" ]
 then
-    sed -i 's/vim.g.tokyonight_style = .*/vim.g.tokyonight_style = "day"/g' ~/repos/dotfiles/nvim/after/plugin/colors.lua
+    sed -i 's/    style = .*/    style = "day",/g' ~/.config/nvim/after/plugin/colors.lua
 else
-    sed -i 's/vim.g.tokyonight_style = .*/vim.g.tokyonight_style = "night"/g' ~/repos/dotfiles/nvim/after/plugin/colors.lua
+    sed -i 's/    style = .*/    style = "night",/g' ~/.config/nvim/after/plugin/colors.lua
 fi

@@ -1,6 +1,11 @@
-vim.cmd [[packadd packer.nvim]]
+local fn = vim.fn
+local install_path = fn.stdpath("data").."/site/pack/packer/start/packer.nvim"
+if fn.empty(fn.glob(install_path)) > 0 then
+    packer_bootstrap = fn.system({"git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path})
+    vim.cmd [[packadd packer.nvim]]
+end
 
-return require("packer").startup(function()
+return require("packer").startup({function(use)
     use("wbthomason/packer.nvim")
 
     use("sbdchd/neoformat")
@@ -10,9 +15,10 @@ return require("packer").startup(function()
 
     use("kyazdani42/nvim-web-devicons")
 
-    use("nvim-lualine/lualine.nvim", {
-        requires = { "kyazdani42/nvim-web-devicons", opt = true }
-    })
+    use("itchyny/lightline.vim")
+    -- use("nvim-lualine/lualine.nvim", {
+    --     requires = { "kyazdani42/nvim-web-devicons", opt = true }
+    -- })
 
     use("norcalli/nvim-colorizer.lua")
 
@@ -25,7 +31,8 @@ return require("packer").startup(function()
     use("nvim-treesitter/nvim-treesitter", {
         run = ":TSUpdate"
     })
-    use("lewis6991/spellsitter.nvim")
+
+    use("windwp/nvim-autopairs")
 
     use("chrisbra/csv.vim")
 
@@ -37,6 +44,21 @@ return require("packer").startup(function()
     use("onsails/lspkind-nvim")
     use("L3MON4D3/LuaSnip")
     use("saadparwaiz1/cmp_luasnip")
-    use("tzachar/cmp-tabnine", { run = "./install.sh" })
     use("simrat39/rust-tools.nvim")
-end)
+
+    use("github/copilot.vim")
+
+    -- Automatically set up your configuration after cloning packer.nvim
+    -- Put this at the end after all plugins
+
+    if packer_bootstrap then
+        require("packer").sync()
+    end
+end,
+config = {
+    display = {
+        open_fn = function()
+            return require("packer.util").float({ border = "single" })
+        end
+    }
+}})

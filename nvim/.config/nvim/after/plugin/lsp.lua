@@ -39,7 +39,6 @@ local source_mapping = {
     luasnip = "[LuaSnip]",
     nvim_lua = "[Lua]",
     latex_symbols = "[LaTeX]",
-    cmp_tabnine = "[TN]",
     path = "[Path]",
 }
 
@@ -78,12 +77,6 @@ cmp.setup({
             vim_item.kind = string.format("%s %s", kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
             -- Source
             local menu = source_mapping[entry.source.name]
-            if entry.source.name == "cmp_tabnine" then
-                if entry.completion_item.data ~= nil and entry.completion_item.data.detail ~= nil then
-                    menu = entry.completion_item.data.detail .. " " .. menu
-                end
-                vim_item.kind = ""
-            end
             vim_item.menu = menu
             return vim_item
         end
@@ -92,7 +85,6 @@ cmp.setup({
         { name = "luasnip" },
         { name = "nvim_lsp" },
         { name = "buffer" },
-        { name = "cmp_tabnine" },
     })
 })
 
@@ -115,7 +107,7 @@ end
 
 local function config(_config)
     return vim.tbl_deep_extend("force", {
-        capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities()),
+        capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities()),
         on_attach = on_attach,
     }, _config or {})
 end
@@ -146,7 +138,16 @@ require("lspconfig").pylsp.setup(config({
             plugins = {
                 black = {
                     enabled = true
-                }
+                },
+                pylint = {
+                    enabled = true
+                },
+                pycodestyle = {
+                    enabled = true
+                },
+                pydocstyle = {
+                    enabled = true
+                },
             }
         }
     }
@@ -178,6 +179,12 @@ require("rust-tools").setup({
         on_attach = on_attach
     }
 })
+
+-- Setup R
+require("lspconfig").r_language_server.setup(config())
+
+-- Setup LaTeX
+require("lspconfig").texlab.setup(config())
 
 -- Lspsaga
 local saga = require("lspsaga")

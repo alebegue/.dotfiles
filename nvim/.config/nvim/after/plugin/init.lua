@@ -1,5 +1,4 @@
-vim.cmd(":TSInstall all");
+local success, neogit = pcall(require, "neogit")
+if not success then return end
 
-require("neogit").setup({})
-
-require("spellsitter").setup()
+neogit.setup({})

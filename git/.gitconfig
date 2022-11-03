@@ -3,3 +3,5 @@
     email = adrien.lebegue@gmail.com
 [init]
     defaultBranch = main
+[credential]
+	helper = cache
