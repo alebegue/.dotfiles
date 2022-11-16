@@ -1,7 +1,7 @@
 #!/bin/bash
 # Change the opacity parameter of Alacritty config file
 
-CONFIG_FILE="/mnt/c/Users/AdrienLebegue/Documents/repos/dotfiles/alacritty/alacritty.yml"
+CONFIG_FILE="$HOME/.config/alacritty/alacritty.yml"
 
 if [ $# -eq 0 ]
 then

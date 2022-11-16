@@ -17,7 +17,7 @@ then
     exit 1
 fi
 
-sed -i "s/colors: \*.[A\-z].*/colors: \*$THEME/g" /mnt/c/Users/AdrienLebegue/Documents/repos/dotfiles/alacritty/alacritty.yml &&
+sed -i "s/colors: \*.[A\-z].*/colors: \*$THEME/g" $HOME/.config/alacritty/alacritty.yml &&
 
 if [[ -n $TMUX ]]
 then

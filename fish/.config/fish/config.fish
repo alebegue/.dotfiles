@@ -31,10 +31,10 @@ alias df="df -h"
 alias free="free -m"
 
 # VS Code
-alias code="/mnt/c/Users/AdrienLebegue/AppData/Local/Programs/Microsoft\ VS\ Code/bin/code"
+# alias code="/mnt/c/Users/AdrienLebegue/AppData/Local/Programs/Microsoft\ VS\ Code/bin/code"
 
 # set color scheme given Alacritty config file
-set -Ux MYCOLORSCHEME $(sed -n "s/colors: \*\([A\-z]*\).*/\1/p" /mnt/c/Users/AdrienLebegue/Documents/repos/dotfiles/alacritty/alacritty.yml)
+set -Ux MYCOLORSCHEME $(sed -n "s/colors: \*\([A\-z]*\).*/\1/p" ~/.config/alacritty/alacritty.yml)
 set-color-scheme $MYCOLORSCHEME
 
 # switch between light and dark color schemes
@@ -74,6 +74,6 @@ function fish_prompt
     set_color normal
 end
 
-source ~/.asdf/asdf.fish
+# source ~/.asdf/asdf.fish
 pyenv init - | source
 # starship init fish | source
