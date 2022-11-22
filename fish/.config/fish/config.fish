@@ -15,9 +15,9 @@ alias vi="nvim"
 alias edf="cd ~/repos/dotfiles && vim"
 
 # replace ls with exa
-alias ls="exa -al --group-directories-first --git"
+alias ls="exa -l --group-directories-first --git"
 alias la="exa -a --group-directories-first --git"
-alias ll="exa -l --group-directories-first --git"
+alias ll="exa -al --group-directories-first --git"
 alias lt="exa -aT --group-directories-first --git"
 alias l.="exa -a | egrep '^\.'"
 
@@ -74,6 +74,6 @@ function fish_prompt
     set_color normal
 end
 
-# source ~/.asdf/asdf.fish
+source ~/.asdf/asdf.fish
 pyenv init - | source
 # starship init fish | source
