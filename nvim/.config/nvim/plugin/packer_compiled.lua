@@ -104,6 +104,16 @@ _G.packer_plugins = {
     path = "/home/adrien/.local/share/nvim/site/pack/packer/start/csv.vim",
     url = "https://github.com/chrisbra/csv.vim"
   },
+  ["git-worktree.nvim"] = {
+    loaded = true,
+    path = "/home/adrien/.local/share/nvim/site/pack/packer/start/git-worktree.nvim",
+    url = "https://github.com/ThePrimeagen/git-worktree.nvim"
+  },
+  harpoon = {
+    loaded = true,
+    path = "/home/adrien/.local/share/nvim/site/pack/packer/start/harpoon",
+    url = "https://github.com/ThePrimeagen/harpoon"
+  },
   ["lightline.vim"] = {
     loaded = true,
     path = "/home/adrien/.local/share/nvim/site/pack/packer/start/lightline.vim",
@@ -178,11 +188,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/adrien/.local/share/nvim/site/pack/packer/start/tcomment_vim",
     url = "https://github.com/tomtom/tcomment_vim"
-  },
-  ["telescope-file-browser.nvim"] = {
-    loaded = true,
-    path = "/home/adrien/.local/share/nvim/site/pack/packer/start/telescope-file-browser.nvim",
-    url = "https://github.com/nvim-telescope/telescope-file-browser.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,

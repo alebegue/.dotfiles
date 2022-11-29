@@ -1,3 +1,8 @@
+# if status is-interactive
+# and not set -q TMUX
+#     exec tmux
+# end
+
 # set Vi key bindings
 fish_vi_key_bindings
 
@@ -12,7 +17,7 @@ alias vim="nvim"
 alias vi="nvim"
 
 # go to dotfiles and open vim
-alias edf="cd ~/repos/dotfiles && vim"
+alias edf="cd ~/.dotfiles && vim"
 
 # replace ls with exa
 alias ls="exa -l --group-directories-first --git"
@@ -29,6 +34,9 @@ alias rm="rm -i"
 # adding flags
 alias df="df -h"
 alias free="free -m"
+
+bind \cf tmux-sessionizer
+bind -M insert \cf tmux-sessionizer
 
 # VS Code
 # alias code="/mnt/c/Users/AdrienLebegue/AppData/Local/Programs/Microsoft\ VS\ Code/bin/code"
@@ -48,10 +56,10 @@ if status is-interactive
 end
 
 # Fish git prompt
-set __fish_git_prompt_showuntrackedfiles 'yes'
-set __fish_git_prompt_showdirtystate 'yes'
+set __fish_git_prompt_showuntrackedfiles yes
+set __fish_git_prompt_showdirtystate yes
 set __fish_git_prompt_showstashstate ''
-set __fish_git_prompt_showupstream 'none'
+set __fish_git_prompt_showupstream none
 set -g fish_prompt_pwd_dir_length 3
 
 function fish_prompt
@@ -76,4 +84,7 @@ end
 
 source ~/.asdf/asdf.fish
 pyenv init - | source
+if test -e "$VIRTUAL_ENV"; and test -f "$VIRTUAL_ENV/bin/activate.fish"
+    source "$VIRTUAL_ENV/bin/activate.fish"
+end
 # starship init fish | source

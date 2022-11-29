@@ -16,9 +16,6 @@ return require("packer").startup({function(use)
     use("kyazdani42/nvim-web-devicons")
 
     use("itchyny/lightline.vim")
-    -- use("nvim-lualine/lualine.nvim", {
-    --     requires = { "kyazdani42/nvim-web-devicons", opt = true }
-    -- })
 
     use("norcalli/nvim-colorizer.lua")
 
@@ -26,7 +23,9 @@ return require("packer").startup({function(use)
     use("TimUntersberger/neogit")
     use("airblade/vim-gitgutter")
     use("nvim-telescope/telescope.nvim")
-    use("nvim-telescope/telescope-file-browser.nvim")
+
+    use("ThePrimeagen/git-worktree.nvim")
+    use("ThePrimeagen/harpoon")
 
     use("nvim-treesitter/nvim-treesitter", {
         run = ":TSUpdate"
@@ -47,6 +46,8 @@ return require("packer").startup({function(use)
     use("simrat39/rust-tools.nvim")
 
     use("github/copilot.vim")
+
+    use("iamcco/markdown-preview.nvim")
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
