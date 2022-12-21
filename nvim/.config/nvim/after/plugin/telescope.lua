@@ -17,6 +17,11 @@ telescope.setup({
                 return {"--hidden"}
             end
         },
+        grep_string = {
+            additional_args = function(opts)
+                return {"--hidden"}
+            end
+        },
     },
 })
 

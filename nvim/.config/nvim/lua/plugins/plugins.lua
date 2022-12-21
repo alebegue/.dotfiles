@@ -20,8 +20,7 @@ return require("packer").startup({function(use)
     use("norcalli/nvim-colorizer.lua")
 
     use("nvim-lua/plenary.nvim")
-    use("TimUntersberger/neogit")
-    use("airblade/vim-gitgutter")
+    use("tpope/vim-fugitive")
     use("nvim-telescope/telescope.nvim")
 
     use("ThePrimeagen/git-worktree.nvim")

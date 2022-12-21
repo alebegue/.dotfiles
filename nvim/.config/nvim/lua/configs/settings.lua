@@ -46,5 +46,3 @@ vim.opt.shortmess:append("c")
 vim.opt.colorcolumn = "80"
 
 vim.opt.completeopt = {"menu", "menuone", "noselect"}
-
-vim.cmd("let g:lightline = {'colorscheme': 'tokyonight'}")
