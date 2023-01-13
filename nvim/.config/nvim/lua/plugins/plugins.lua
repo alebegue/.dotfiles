@@ -20,6 +20,7 @@ return require("packer").startup({function(use)
     use("norcalli/nvim-colorizer.lua")
 
     use("nvim-lua/plenary.nvim")
+    use("mbbill/undotree")
     use("tpope/vim-fugitive")
     use("nvim-telescope/telescope.nvim")
 
