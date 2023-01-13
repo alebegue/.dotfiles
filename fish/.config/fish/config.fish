@@ -82,6 +82,18 @@ function fish_prompt
     set_color normal
 end
 
+function start_conda
+    #>>> conda initialize >>>
+    # !! Contents within this block are managed by 'conda init' !!
+    eval $HOME/miniconda3/bin/conda "shell.fish" "hook" $argv | source
+    # <<< conda initialize <<<
+end
+# for CUDA: to run after env loaded
+# set -gx LD_LIBRARY_PATH $CONDA_PREFIX/lib/ $LD_LIBRARY_PATH
+
+set -Ux JAVA_HOME /usr/lib/jvm/jdk-17
+set -Ux fish_user_paths $JAVA_HOME/bin $fish_user_paths
+
 source ~/.asdf/asdf.fish
 pyenv init - | source
 if test -e "$VIRTUAL_ENV"; and test -f "$VIRTUAL_ENV/bin/activate.fish"
