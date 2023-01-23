@@ -88,10 +88,6 @@ cmp.setup({
     })
 })
 
--- vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
---     border = "rounded",
--- })
-
 local function on_attach()
     nnoremap("gd", function() vim.lsp.buf.definition() end)
     nnoremap("K", function() vim.lsp.buf.hover() end)
@@ -132,6 +128,10 @@ require("lspconfig").sumneko_lua.setup {
 }
 
 -- Setup Python
+require("lspconfig").ruff_lsp.setup({
+    on_attach = on_attach
+})
+
 require("lspconfig").pylsp.setup(config({
     settings = {
         pylsp = {
@@ -140,38 +140,21 @@ require("lspconfig").pylsp.setup(config({
                     enabled = true
                 },
                 pylint = {
-                    enabled = true
+                    enabled = false
                 },
                 pycodestyle = {
-                    enabled = true
+                    enabled = false
                 },
                 pydocstyle = {
-                    enabled = true
+                    enabled = false
+                },
+                mccabe = {
+                    enabled = false
                 },
             }
         }
     }
 }))
-
--- local python_root_files = {
---     ".git",
---     "pyproject.toml",
---     "setup.py",
---     "setup.cfg",
---     "Pipfile",
---     "pyrightconfig.json",
--- }
---
--- require("lspconfig").pyright.setup(config({
---     root_dir = require("lspconfig").util.root_pattern(unpack(python_root_files)),
---     python = {
---         analysis = {
---             autoSearchPaths = true,
---             diagnosticMode = "workspace",
---             useLibraryCodeForTypes = true
---         }
---     }
--- }))
 
 -- Setup Rust
 require("rust-tools").setup({
