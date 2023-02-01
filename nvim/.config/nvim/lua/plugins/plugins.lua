@@ -31,7 +31,7 @@ return require("packer").startup({function(use)
         run = ":TSUpdate"
     })
 
-    use("windwp/nvim-autopairs")
+    -- use("windwp/nvim-autopairs")
 
     use("chrisbra/csv.vim")
 
