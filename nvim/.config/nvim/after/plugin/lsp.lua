@@ -128,9 +128,7 @@ require("lspconfig").sumneko_lua.setup {
 }
 
 -- Setup Python
-require("lspconfig").ruff_lsp.setup({
-    on_attach = on_attach
-})
+require("lspconfig").ruff_lsp.setup(config())
 
 require("lspconfig").pylsp.setup(config({
     settings = {
@@ -170,8 +168,8 @@ require("lspconfig").r_language_server.setup(config())
 require("lspconfig").texlab.setup(config())
 
 -- Lspsaga
-local saga = require("lspsaga")
-
-saga.init_lsp_saga({
-    border_style = "double"
-})
+-- local saga = require("lspsaga")
+--
+-- saga.init_lsp_saga({
+--     border_style = "double"
+-- })
