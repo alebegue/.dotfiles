@@ -1,59 +1,13 @@
-# My dotfiles
+# .dotfiles
+
+## Requirement
 
 ```shell
 sudo apt install stow
 ```
 
-## Alacritty
+## Usage
 
 ```shell
-New-Item -ItemType SymbolicLink -Path $env:APPDATA\alacritty\alacritty.yml -Target "$env:HOMEPATH\Documents\repos\dotfiles\alacritty\alacritty.yml"
-```
-
-## Bash scripts
-
-```shell
-stow -t $HOME bash
-```
-
-## Fish shell
-
-```shell
-stow -t $HOME fish
-```
-
-## Git
-
-```shell
-stow -t $HOME git
-```
-
-## Neovim
-
-```shell
-stow -t $HOME nvim
-```
-
-## PowerShell profile
-
-```shell
-New-Item -ItemType SymbolicLink -Path $env:HOMEPATH\Documents\PowerShell\Microsoft.PowerShell_profile.ps1 -Target "$env:HOMEPATH\Documents\repos\dotfiles\PowerShell\Microsoft.PowerShell_profile.ps1"
-```
-
-## Starship
-
-```shell
-stow -t $HOME starship
-```
-
-## Tmux
-
-```shell
-stow -t $HOME tmux
-```
-
-## ZSH shell
-
-```shell
-stow -t $HOME zsh
+stow <module>
 ```
