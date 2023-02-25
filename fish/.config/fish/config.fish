@@ -63,22 +63,16 @@ set __fish_git_prompt_showupstream none
 set -g fish_prompt_pwd_dir_length 3
 
 function fish_prompt
-    set_color brblack
-    echo -n "["(date "+%H:%M")"] "
-    set_color blue
-    echo -n (hostname)
-    set_color brblack
-    echo -n ':'
-    set_color yellow
+    set_color green
     if [ $PWD != $HOME ]
         echo -n (basename $PWD)
     else
         echo -n '~'
     end
-    set_color green
+    set_color yellow
     printf '%s ' (__fish_git_prompt)
-    set_color red
-    echo -n '| '
+    set_color green
+    echo -n '$ '
     set_color normal
 end
 
