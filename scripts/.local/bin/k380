@@ -1,0 +1,17 @@
+#!/bin/bash
+# Make function keys default for Logitech K380
+# see https://askubuntu.com/questions/699138/logitech-k380-bluetooth-keyboard-make-function-keys-default
+
+echo "Make function keys default for Logitech K380..."
+
+# Find the hidraw device
+grep -FH "HID_NAME" /sys/class/hidraw/hidraw*/device/uevent
+
+# Ask for the hidraw device number
+read -p "Enter hidraw device number (e.g., 2): " hidraw
+
+# Write the magic bytes to the hidraw device
+# 0x10 = 16, 0xff = 255, 0x0b = 11, 0x1e = 30, 0x00 = 0
+echo "Writing magic bytes to /dev/hidraw$hidraw..."
+echo -ne "\x10\xff\x0b\x1e\x00\x00\x00" | sudo tee /dev/hidraw$hidraw
+echo "Done!"
