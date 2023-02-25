@@ -31,10 +31,6 @@ return require("packer").startup({function(use)
         run = ":TSUpdate"
     })
 
-    -- use("windwp/nvim-autopairs")
-
-    use("chrisbra/csv.vim")
-
     use("neovim/nvim-lspconfig")
     use({"glepnir/lspsaga.nvim", branch = "main"})
     use("hrsh7th/cmp-nvim-lsp")

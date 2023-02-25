@@ -99,11 +99,6 @@ _G.packer_plugins = {
     path = "/home/adrien/.local/share/nvim/site/pack/packer/start/copilot.vim",
     url = "https://github.com/github/copilot.vim"
   },
-  ["csv.vim"] = {
-    loaded = true,
-    path = "/home/adrien/.local/share/nvim/site/pack/packer/start/csv.vim",
-    url = "https://github.com/chrisbra/csv.vim"
-  },
   ["git-worktree.nvim"] = {
     loaded = true,
     path = "/home/adrien/.local/share/nvim/site/pack/packer/start/git-worktree.nvim",
@@ -138,16 +133,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/adrien/.local/share/nvim/site/pack/packer/start/neoformat",
     url = "https://github.com/sbdchd/neoformat"
-  },
-  neogit = {
-    loaded = true,
-    path = "/home/adrien/.local/share/nvim/site/pack/packer/start/neogit",
-    url = "https://github.com/TimUntersberger/neogit"
-  },
-  ["nvim-autopairs"] = {
-    loaded = true,
-    path = "/home/adrien/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
-    url = "https://github.com/windwp/nvim-autopairs"
   },
   ["nvim-cmp"] = {
     loaded = true,
@@ -204,10 +189,15 @@ _G.packer_plugins = {
     path = "/home/adrien/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
     url = "https://github.com/folke/tokyonight.nvim"
   },
-  ["vim-gitgutter"] = {
+  undotree = {
     loaded = true,
-    path = "/home/adrien/.local/share/nvim/site/pack/packer/start/vim-gitgutter",
-    url = "https://github.com/airblade/vim-gitgutter"
+    path = "/home/adrien/.local/share/nvim/site/pack/packer/start/undotree",
+    url = "https://github.com/mbbill/undotree"
+  },
+  ["vim-fugitive"] = {
+    loaded = true,
+    path = "/home/adrien/.local/share/nvim/site/pack/packer/start/vim-fugitive",
+    url = "https://github.com/tpope/vim-fugitive"
   }
 }
 
