@@ -20,11 +20,13 @@ alias vi="nvim"
 alias edf="cd ~/.dotfiles && vim"
 
 # replace ls with exa
-alias ls="exa -l --group-directories-first --git"
-alias la="exa -a --group-directories-first --git"
-alias ll="exa -al --group-directories-first --git"
-alias lt="exa -aT --group-directories-first --git"
-alias l.="exa -a | egrep '^\.'"
+alias l="exa -l --icons --git -a"
+alias lt="exa --tree --level=2 --long --icons --git"
+# alias ls="exa -l --group-directories-first --git"
+# alias la="exa -a --group-directories-first --git"
+# alias ll="exa -al --group-directories-first --git"
+# alias lt="exa -aT --group-directories-first --git"
+# alias l.="exa -a | egrep '^\.'"
 
 # confirm before overwriting something
 alias cp="cp -i"
