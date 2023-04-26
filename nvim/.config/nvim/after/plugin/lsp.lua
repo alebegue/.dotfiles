@@ -167,6 +167,9 @@ require("lspconfig").r_language_server.setup(config())
 -- Setup LaTeX
 require("lspconfig").texlab.setup(config())
 
+-- Setup TypeScript
+require("lspconfig").tsserver.setup(config())
+
 -- Lspsaga
 -- local saga = require("lspsaga")
 --
