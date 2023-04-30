@@ -19,14 +19,16 @@ fi
 
 sed -i "s/colors: \*.[A\-z].*/colors: \*$THEME/g" $HOME/.config/alacritty/alacritty.yml &&
 
-if [[ -n $TMUX ]]
-then
-    tmux source-file ~/.tmux_$THEME.conf
-fi
-
 if [ "$THEME" = "light" ]
 then
-    sed -i 's/    style = .*/    style = "day",/g' ~/.config/nvim/after/plugin/colors.lua
+    sed -i 's/status-style "bg=.* fg=.*"/status-style "bg=#ededed fg=#4382a1"/g' ~/.tmux.conf
+    sed -i 's/variant = ".*"/variant = "dawn"/g' ~/.config/nvim/lua/plugins/rose-pine.lua
 else
-    sed -i 's/    style = .*/    style = "night",/g' ~/.config/nvim/after/plugin/colors.lua
+    sed -i 's/status-style "bg=.* fg=.*"/status-style "bg=#333333 fg=#5eacd3"/g' ~/.tmux.conf
+    sed -i 's/variant = ".*"/variant = "main"/g' ~/.config/nvim/lua/plugins/rose-pine.lua
+fi
+
+if [[ -n $TMUX ]]
+then
+    tmux source-file ~/.tmux.conf
 fi

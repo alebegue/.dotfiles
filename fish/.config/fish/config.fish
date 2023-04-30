@@ -1,8 +1,3 @@
-# if status is-interactive
-# and not set -q TMUX
-#     exec tmux
-# end
-
 # set Vi key bindings
 fish_vi_key_bindings
 
@@ -16,22 +11,13 @@ set fish_color_valid_path
 alias vim="nvim"
 alias vi="nvim"
 
-# go to dotfiles and open vim
-alias edf="cd ~/.dotfiles && vim"
-
 # replace ls with exa
 alias l="exa -l --icons --git -a"
 alias lt="exa --tree --level=2 --long --icons --git"
-# alias ls="exa -l --group-directories-first --git"
-# alias la="exa -a --group-directories-first --git"
-# alias ll="exa -al --group-directories-first --git"
-# alias lt="exa -aT --group-directories-first --git"
-# alias l.="exa -a | egrep '^\.'"
 
 # confirm before overwriting something
 alias cp="cp -i"
 alias mv="mv -i"
-alias rm="rm -i"
 
 # adding flags
 alias df="df -h"
@@ -39,9 +25,6 @@ alias free="free -m"
 
 bind \cf tmux-sessionizer
 bind -M insert \cf tmux-sessionizer
-
-# VS Code
-# alias code="/mnt/c/Users/AdrienLebegue/AppData/Local/Programs/Microsoft\ VS\ Code/bin/code"
 
 # set color scheme given Alacritty config file
 set -Ux MYCOLORSCHEME $(sed -n "s/colors: \*\([A\-z]*\).*/\1/p" ~/.config/alacritty/alacritty.yml)
