@@ -26,10 +26,6 @@ alias free="free -m"
 bind \cf tmux-sessionizer
 bind -M insert \cf tmux-sessionizer
 
-# set color scheme given Alacritty config file
-set -Ux MYCOLORSCHEME $(sed -n "s/colors: \*\([A\-z]*\).*/\1/p" ~/.config/alacritty/alacritty.yml)
-set-color-scheme $MYCOLORSCHEME
-
 # switch between light and dark color schemes
 alias ol="set-color-scheme light"
 alias od="set-color-scheme dark"
