@@ -19,23 +19,16 @@ M.handlers = {
             settings = {
                 pylsp = {
                     plugins = {
-                        autopep8 = { enabled = false },
-                        isort = { enabled = false },
-                        mccabe = { enabled = false },
-                        preload = { enabled = false },
-                        pycodestyle = { enabled = false },
-                        pyflakes = { enabled = false },
-                        pylsp_mypy = {
-                            enabled = true,
-                            live_mode = false,
-                            report_progress = true,
-                            dmypy = true,
-                        },
-                        yapf = { enabled = false },
                         ruff = {
                             enabled = true,
                             extendSelect = { "I" },
                         },
+                        black = {
+                            enabled = true,
+                            line_length = 88,
+                        },
+                        autopep8 = { enabled = false },
+                        yapf = { enabled = false },
                     },
                 },
             },

@@ -17,6 +17,7 @@ M.mason_post_install = function(pkg)
             "--disable-pip-version-check",
             "pylsp-mypy",
             "python-lsp-ruff",
+            "python-lsp-black",
         },
         cwd = venv,
         env = { VIRTUAL_ENV = venv },
