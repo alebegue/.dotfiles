@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+# Set laptop monitor as primary
+xrandr --output eDP-1-1 --auto --primary
+
+# If provided, set external monitor to the right of the laptop monitor
+if [ -z "$1" ]; then
+    exit 0
+fi
+xrandr --output $1 --auto --right-of eDP-1-1
+
+# If provided, set Wacom tablet below the external monitor
+if [ -z "$2" ]; then
+    exit 0
+fi
+xrandr --output $2 --auto --below $1
