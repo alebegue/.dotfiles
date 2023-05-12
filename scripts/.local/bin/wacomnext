@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+# Switches all wacom devices to the next screen
+for ID in $(xsetwacom list | cut -f2 | cut -d' ' -f2)
+do
+    xsetwacom set "$ID" maptooutput next
+done
