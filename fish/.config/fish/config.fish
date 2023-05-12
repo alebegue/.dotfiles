@@ -12,8 +12,10 @@ alias vim="nvim"
 alias vi="nvim"
 
 # replace ls with exa
-alias l="exa -l --icons --git -a"
-alias lt="exa --tree --level=2 --long --icons --git"
+alias l="exa -l --icons --git -a --no-user"
+alias ll="exa -l --icons --git -a"
+alias lt="exa --tree --level=2 --long --icons --git --no-user"
+alias llt="exa --tree --level=2 --long --icons --git"
 
 # confirm before overwriting something
 alias cp="cp -i"
