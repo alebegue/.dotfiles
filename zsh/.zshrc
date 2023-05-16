@@ -5,6 +5,7 @@ ZSH_THEME="robbyrussell"
 # vim keybindings
 bindkey -v
 
+# plugins
 plugins=(fzf)
 
 source $ZSH/oh-my-zsh.sh
@@ -32,6 +33,9 @@ alias find="fd"
 # switch between light and dark color schemes
 alias ol="set-color-scheme light"
 alias od="set-color-scheme dark"
+
+# fuzzy tmux session switching
+bindkey -s ^f "tmux-sessionizer\n"
 
 # use Starship prompt
 eval "$(starship init zsh)"
