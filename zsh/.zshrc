@@ -24,12 +24,6 @@ alias llt="exa --tree --level=2 --long --icons --git"
 alias cp="cp -i"
 alias mv="mv -i"
 
-# use bat instead of cat
-alias cat="bat"
-
-# use fd instead of find
-alias find="fd"
-
 # switch between light and dark color schemes
 alias ol="set-color-scheme light"
 alias od="set-color-scheme dark"
@@ -39,3 +33,14 @@ bindkey -s ^f "tmux-sessionizer\n"
 
 # use Starship prompt
 eval "$(starship init zsh)"
+
+# use pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+# use asdf
+path+=(
+  $HOME/.asdf/shims
+  $HOME/.asdf/bin
+)
