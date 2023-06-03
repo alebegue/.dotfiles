@@ -34,6 +34,12 @@ M.handlers = {
             },
         })
     end,
+    ["rust_analyzer"] = function()
+        require("rust-tools").setup({
+            capabilities = common.capabilities(),
+            on_attach = common.on_attach,
+        })
+    end,
 }
 
 return {
@@ -87,5 +93,9 @@ return {
                 automatic_setup = true,
             })
         end,
+    },
+    {
+        "simrat39/rust-tools.nvim",
+        dependencies = { "williamboman/mason.nvim" },
     }
 }
