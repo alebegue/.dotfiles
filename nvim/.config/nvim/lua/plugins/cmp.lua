@@ -69,4 +69,5 @@ return {
         { "rafamadriz/friendly-snippets" },
 		{ "hrsh7th/cmp-path" },
     },
+    event = "VeryLazy",
 }
