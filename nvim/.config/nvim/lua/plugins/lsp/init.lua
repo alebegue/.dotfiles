@@ -29,6 +29,7 @@ M.handlers = {
                         },
                         autopep8 = { enabled = false },
                         yapf = { enabled = false },
+                        pycodestyle = { enabled = false },
                     },
                 },
             },

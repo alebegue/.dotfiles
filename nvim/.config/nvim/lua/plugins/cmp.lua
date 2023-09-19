@@ -23,10 +23,8 @@ return {
             mapping = cmp.mapping.preset.insert({
                 ["<C-c>"] = cmp.mapping.abort(),
                 ["<C-Space>"] = cmp.mapping.complete(),
-                ["<C-j>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
-                ["<C-k>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
-                ["<CR>"] = cmp.mapping.confirm({ select = true, behavior = cmp.ConfirmBehavior.Replace }),
-                ["<Tab>"] = cmp.mapping(function(fallback)
+                ["<CR>"] = cmp.mapping.confirm({ select = false, behavior = cmp.ConfirmBehavior.Replace }),
+                ["<C-j>"] = cmp.mapping(function(fallback)
                     local luasnip = require("luasnip")
 
                     if luasnip.expand_or_locally_jumpable() then
@@ -37,7 +35,7 @@ return {
                         fallback()
                     end
                 end),
-                ["<S-Tab>"] = cmp.mapping(function(fallback)
+                ["<C-k>"] = cmp.mapping(function(fallback)
                     local luasnip = require("luasnip")
 
                     if luasnip.jumpable(-1) then
