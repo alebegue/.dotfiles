@@ -44,3 +44,10 @@ path+=(
   $HOME/.asdf/shims
   $HOME/.asdf/bin
 )
+
+# add CUDA
+path+=(
+  /usr/local/cuda-11.7/bin
+)
+
+eval "$(pixi completion --shell zsh)"
