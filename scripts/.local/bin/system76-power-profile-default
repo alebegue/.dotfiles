@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+[ "$(whoami)" != "root" ] && exec sudo -- "$0" "$@"
+
+# write a systemd service file to set profile after system76-power service starts
+cat <<EOF > /etc/systemd/system/system76-power-profile-default.service
+[Unit]
+Description=Set the profile profile at startup.
+After=com.system76.PowerDaemon.service
+
+[Service]
+Type=simple
+ExecStart=/bin/bash -c 'system76-power profile performance' 
+
+[Install]
+WantedBy=default.target
+EOF
+
+# enable our new service
+systemctl enable system76-power-profile-default
+
+exit
+
+exit 0
