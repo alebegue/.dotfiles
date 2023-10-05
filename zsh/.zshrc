@@ -15,10 +15,10 @@ alias vim="nvim"
 alias vi="nvim"
 
 # replace ls with exa
-alias l="exa -l --icons --git -a --no-user"
-alias ll="exa -l --icons --git -a"
-alias lt="exa --tree --level=2 --long --icons --git --no-user"
-alias llt="exa --tree --level=2 --long --icons --git"
+alias l="exa -l --icons -a --no-user"
+alias ll="exa -l --icons -a"
+alias lt="exa --tree --level=2 --long --icons --no-user"
+alias llt="exa --tree --level=2 --long --icons"
 
 # confirm before overwriting something
 alias cp="cp -i"
@@ -39,15 +39,16 @@ export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
-# use asdf
-path+=(
-  $HOME/.asdf/shims
-  $HOME/.asdf/bin
-)
-
 # add CUDA
 path+=(
   /usr/local/cuda-11.7/bin
 )
 
+# add pixi completion
 eval "$(pixi completion --shell zsh)"
+
+# add Poetry completion
+fpath+=~/.zfunc
+autoload -Uz compinit && compinit
+export MODULAR_HOME="/home/adrien/.modular"
+export PATH="/home/adrien/.modular/pkg/packages.modular.com_mojo/bin:$PATH"
