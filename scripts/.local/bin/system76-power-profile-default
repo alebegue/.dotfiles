@@ -9,7 +9,7 @@ After=com.system76.PowerDaemon.service
 
 [Service]
 Type=simple
-ExecStart=/bin/bash -c 'system76-power profile performance' 
+ExecStart=/bin/bash -c 'system76-power profile balanced' 
 
 [Install]
 WantedBy=default.target
