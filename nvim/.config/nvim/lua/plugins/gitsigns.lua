@@ -41,6 +41,11 @@ return {
 
                 -- Text object
                 map({"o", "x"}, "ih", ":<C-U>Gitsigns select_hunk<CR>")
+
+                -- No background
+                vim.cmd("highlight GitSignsAdd guibg=NONE")
+                vim.cmd("highlight GitSignsChange guibg=NONE")
+                vim.cmd("highlight GitSignsDelete guibg=NONE")
             end,
         })
     end,
