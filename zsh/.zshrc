@@ -14,11 +14,11 @@ source $ZSH/oh-my-zsh.sh
 alias vim="nvim"
 alias vi="nvim"
 
-# replace ls with exa
-alias l="exa -l --icons -a --no-user"
-alias ll="exa -l --icons -a"
-alias lt="exa --tree --level=2 --long --icons --no-user"
-alias llt="exa --tree --level=2 --long --icons"
+# replace ls with eza
+alias l="eza -l --icons -a --no-user"
+alias ll="eza -l --icons -a"
+alias lt="eza --tree --level=2 --long --icons --no-user"
+alias llt="eza --tree --level=2 --long --icons"
 
 # confirm before overwriting something
 alias cp="cp -i"
