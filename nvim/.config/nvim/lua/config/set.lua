@@ -10,7 +10,7 @@ vim.opt.expandtab = true
 
 vim.opt.smartindent = true
 
-vim.opt.wrap = false
+vim.opt.wrap = true
 
 -- vim.opt.list = true
 vim.cmd([[set listchars+=tab:>-,trail:~,extends:>,precedes:<,lead:·]])
