@@ -44,11 +44,13 @@ path+=(
   /usr/local/cuda-11.7/bin
 )
 
+# add pixi
+export PATH=$PATH:$HOME/.pixi/bin
 # add pixi completion
 eval "$(pixi completion --shell zsh)"
 
 # add Poetry completion
 fpath+=~/.zfunc
 autoload -Uz compinit && compinit
-export MODULAR_HOME="/home/adrien/.modular"
-export PATH="/home/adrien/.modular/pkg/packages.modular.com_mojo/bin:$PATH"
+
+export PATH="$HOME/.local/bin:$PATH"
