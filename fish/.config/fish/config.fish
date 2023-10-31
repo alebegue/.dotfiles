@@ -50,7 +50,10 @@ function fish_prompt
 end
 
 # Starship
-starship init fish | source
+#starship init fish | source
 
 # pyenv
 pyenv init - | source
+
+# pixi
+pixi completion --shell fish | source
