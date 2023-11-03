@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# This script allows the user to launch the desired VM with virt-manager
+
+export LIBVIRT_DEFAULT_URI=qemu:///system
+
+/usr/bin/virsh --connect $LIBVIRT_DEFAULT_URI start $1
+#/usr/bin/virt-manager --connect $LIBVIRT_DEFAULT_URI --show-domain-console $1
+/usr/bin/virt-viewer --connect $LIBVIRT_DEFAULT_URI --attach $1

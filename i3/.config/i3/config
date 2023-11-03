@@ -81,6 +81,10 @@ bindsym Mod1+l exec ~/.config/i3/scripts/blur-lock
 # Power Profiles menu switcher (rofi)
 bindsym $mod+Shift+p exec ~/.config/i3/scripts/power-profiles
 
+# start Win11 VM
+bindsym $mod+Shift+w exec ~/.local/bin/launch-vm win11
+assign [class="Virt-viewer"] $ws5
+
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
