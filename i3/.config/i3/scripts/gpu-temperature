@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# Get the temperature of the GPU (NVIDIA only)
+
+TEMP=$(nvidia-smi -q | awk '/GPU Current Temp/ {print $5}')
+
+printf "%02.0f°C\n" $TEMP
+printf "%02.0f°C\n" $TEMP
+
+if [ $TEMP -gt 90 ]; then
+    echo "#FF0000" && exit 0
+elif [ $TEMP -gt 70 ]; then
+    echo "#FFFC00" && exit 0
+fi

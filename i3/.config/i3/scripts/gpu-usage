@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# Get the percentage of GPU usage (NVIDIA only)
+
+USAGE=$(nvidia-smi -q | awk '/Gpu/ {print $3}')
+
+printf "%02.0f%%\n" $USAGE
+printf "%02.0f%%\n" $USAGE
+
+if [ $USAGE -gt 80 ]; then
+    echo "#FF0000" && exit 0
+elif [ $USAGE -gt 50 ]; then
+    echo "#FFFC00" && exit 0
+fi

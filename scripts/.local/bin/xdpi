@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+if [ -z "$1" ]; then
+    echo "Usage: xdpi <set|unset>"
+    exit 1
+fi
+
+if [ "$1" != "set" ] && [ "$1" != "unset" ]; then
+    echo "Usage: xdpi <set|unset>"
+    exit 1
+fi
+
+if [ "$1" == "set" ]; then
+    DPI_X=144
+    DPI_I3=166
+    CURSOR=40
+    FACTOR=1.5
+fi
+
+if [ "$1" == "unset" ]; then
+    DPI_X=96
+    DPI_I3=96
+    CURSOR=16
+    FACTOR=1
+fi
+
+sed -i "s/Xft.dpi:.*/Xft.dpi: $DPI_X/g" $HOME/.Xresources
+sed -i "s/Xcursor.size:.*/Xcursor.size: $CURSOR/g" $HOME/.Xresources
+sed -i "s/GDK_SCALE=.*/GDK_SCALE=$FACTOR/g" $HOME/.profile
+sed -i "s/QT_SCREEN_SCALE_FACTORS=.*/QT_SCREEN_SCALE_FACTORS=$FACTOR/g" $HOME/.profile
+sed -i "s/-dpi [0-9]*/-dpi $DPI_I3/g" $HOME/.config/i3/config
+sed -i "s/-dpi [0-9]*/-dpi $DPI_I3/g" $HOME/.config/i3/scripts/powermenu

@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# Get the percentage of used memory on the GPU (NVIDIA only)
+
+TOTAL=$(nvidia-smi -q | sed "/FB Memory/,/Free/!d" | awk '/Total/ {print $3}')
+FREE=$(nvidia-smi -q | sed "/FB Memory/,/Free/!d" | awk '/Free/ {print $3}')
+
+PCT=$(perl -e "printf '%02.0f', ((1 - $FREE / $TOTAL) * 100)")
+
+echo "$PCT%"
+echo "$PCT%"
+
+if [ $PCT -gt 90 ]; then
+    echo "#FF0000" && exit 0
+elif [ $PCT -gt 80 ]; then
+    echo "#FFAE00" && exit 0
+elif [ $PCT -gt 70 ]; then
+    echo "#FFF600" && exit 0
+fi
