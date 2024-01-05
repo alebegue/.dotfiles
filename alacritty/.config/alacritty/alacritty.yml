@@ -6,7 +6,7 @@ window:
     x: 5
     y: 5
 
-  opacity: 0.95
+  opacity: 0.5
 
   title: Alacritty
   dynamic_title: false
