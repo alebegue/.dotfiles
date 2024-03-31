@@ -1,5 +1,5 @@
 # set Vi key bindings
-fish_vi_key_bindings
+#fish_vi_key_bindings
 
 # remove greeting message
 set fish_greeting
@@ -56,4 +56,5 @@ end
 pyenv init - | source
 
 # pixi
+pixi completion --shell fish | source
 pixi completion --shell fish | source

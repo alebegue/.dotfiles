@@ -39,3 +39,5 @@ vim.keymap.set("n", "<leader><leader>", function()
 end)
 
 vim.keymap.set("n", "<leader>b", "<cmd>ls<CR>:b<Space>", { silent = true })
+
+vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")

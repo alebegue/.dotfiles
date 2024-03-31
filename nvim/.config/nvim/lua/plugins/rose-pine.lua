@@ -1,18 +1,20 @@
 return {
     {
         "rose-pine/neovim",
-        name = "rose-pine", 
-        lazy = false,
-        priority = 1000,
+        name = "rose-pine",
         config = function()
             require("rose-pine").setup({
-                variant = "main",
-                disable_background = true,
-                disable_float_background = false,
-                disable_italics = true
+                styles = {
+                    italic = false,
+                    transparency = true,
+                },
+                highlight_groups = {
+                    MarkdownItalic = { italic = true },
+                    MarkdownBold = { bold = true },
+                },
             })
 
-            vim.cmd([[colorscheme rose-pine]])
+            vim.cmd("colorscheme rose-pine")
         end,
     },
 }

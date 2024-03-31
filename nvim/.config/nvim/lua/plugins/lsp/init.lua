@@ -12,6 +12,14 @@ M.handlers = {
         })
     end,
     ["pylsp"] = function()
+          local venv_path = os.getenv('VIRTUAL_ENV')
+          local py_path = nil
+          -- decide which python executable to use for mypy
+          if venv_path ~= nil then
+              py_path = venv_path .. "/bin/python3"
+          else
+              py_path = vim.g.python3_host_prog
+          end
         require("lspconfig").pylsp.setup({
             capabilities = common.capabilities(),
             cmd = { "pylsp", "--check-parent-process" },
@@ -30,6 +38,13 @@ M.handlers = {
                         autopep8 = { enabled = false },
                         yapf = { enabled = false },
                         pycodestyle = { enabled = false },
+                        pylsp_mypy = {
+                            enabled = true,
+                            overrides = { "--python-executable", py_path, true },
+                            report_progress = true,
+                            live_mode = false,
+                            strict = true,
+                        },
                     },
                 },
             },

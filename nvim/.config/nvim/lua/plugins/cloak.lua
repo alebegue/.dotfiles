@@ -3,6 +3,7 @@ return {
     config = function()
         require('cloak').setup({
             cloak_length = 7,
+            cloak_telescope = false,
             patterns = {
                 {
                     file_pattern = '.env*',
