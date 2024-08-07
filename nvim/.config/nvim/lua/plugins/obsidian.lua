@@ -18,21 +18,11 @@ return {
         workspaces = {
             {
                 name = "personal",
-                path = "~/notes/personal",
+                path = "~/notes",
                 overrides = {
-                    notes_subdir = "./personal/notes",
+                    notes_subdir = "./notes",
                     daily_notes = {
-                        folder = "./personal/dailies",
-                    },
-                },
-            },
-            {
-                name = "work",
-                path = "~/notes/work",
-                overrides = {
-                    notes_subdir = "./work/notes",
-                    daily_notes = {
-                        folder = "./work/dailies",
+                        folder = "./dailies",
                     },
                 },
             },

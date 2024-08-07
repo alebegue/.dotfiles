@@ -1,7 +1,7 @@
 vim.opt.guicursor = ""
 
 vim.opt.nu = false
-vim.opt.relativenumber = false
+vim.opt.relativenumber = true
 
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
@@ -17,7 +17,7 @@ vim.cmd([[set listchars+=tab:>-,trail:~,extends:>,precedes:<,lead:·]])
 
 vim.opt.swapfile = false
 vim.opt.backup = false
-vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+vim.opt.undodir = vim.fn.expand("~/.vim/undodir")
 vim.opt.undofile = true
 
 vim.opt.hlsearch = false

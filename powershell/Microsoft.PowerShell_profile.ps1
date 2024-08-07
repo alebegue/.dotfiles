@@ -1,9 +1,14 @@
-# Shows navigable menu of all options when hitting Tab
-Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
-
-# Autocompletion for arrow keys
-Set-PSReadlineKeyHandler -Key UpArrow -Function HistorySearchBackward
-Set-PSReadlineKeyHandler -Key DownArrow -Function HistorySearchForward
-
-$ENV:STARSHIP_CONFIG = "$HOME\.starship\config.toml"
+$ENV:STARSHIP_CONFIG = "$HOME\.dotfiles\starship\.config\starship.toml"
+$ENV:COMSPEC = "$HOME\.config\wezterm\wezterm.lua"
 Invoke-Expression (&starship init powershell)
+
+Set-Alias -Name vim -Value nvim
+Set-Alias -Name vi -Value nvim
+
+Function l {
+    eza -l --icons --git -a --no-user $args
+}
+
+Function lt {
+    eza --tree --level=2 --long --icons --git --no-user $args
+}

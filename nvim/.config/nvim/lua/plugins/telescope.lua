@@ -52,7 +52,10 @@ return {
             vim.keymap.set("n", "<leader>pg", builtin.live_grep, {})
             vim.keymap.set("n", "<leader>vh", builtin.help_tags, {})
             vim.keymap.set("n", "<leader>vb", builtin.buffers, {})
-
+            vim.keymap.set("n", "<leader>pws", function()
+                local word = vim.fn.expand("<cword>")
+                builtin.grep_string({ search = word })
+            end)
             require("telescope").load_extension("fzf")
         end,
     }

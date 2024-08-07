@@ -49,8 +49,10 @@ function fish_prompt
     set_color normal
 end
 
+eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+
 # Starship
-#starship init fish | source
+starship init fish | source
 
 # pyenv
 pyenv init - | source
@@ -58,3 +60,6 @@ pyenv init - | source
 # pixi
 pixi completion --shell fish | source
 pixi completion --shell fish | source
+
+# Created by `pipx` on 2024-04-04 07:56:01
+set PATH $PATH /home/alebegue/.local/bin
