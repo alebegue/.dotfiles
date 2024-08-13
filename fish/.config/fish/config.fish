@@ -49,8 +49,6 @@ function fish_prompt
     set_color normal
 end
 
-eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
-
 # Starship
 starship init fish | source
 
@@ -58,8 +56,21 @@ starship init fish | source
 pyenv init - | source
 
 # pixi
-pixi completion --shell fish | source
-pixi completion --shell fish | source
+#pixi completion --shell fish | source
+#pixi completion --shell fish | source
 
 # Created by `pipx` on 2024-04-04 07:56:01
 set PATH $PATH /home/alebegue/.local/bin
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+if test -f /home/alebegue/miniconda3/bin/conda
+    eval /home/alebegue/miniconda3/bin/conda "shell.fish" "hook" $argv | source
+else
+    if test -f "/home/alebegue/miniconda3/etc/fish/conf.d/conda.fish"
+        . "/home/alebegue/miniconda3/etc/fish/conf.d/conda.fish"
+    else
+        set -x PATH "/home/alebegue/miniconda3/bin" $PATH
+    end
+end
+# <<< conda initialize <<<

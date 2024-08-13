@@ -12,9 +12,10 @@ local config = {
     font_size = 12.0,
     initial_rows = 30,
     initial_cols = 100,
-    tab_bar_at_bottom = true,
+    tab_bar_at_bottom = false,
+    hide_tab_bar_if_only_one_tab = true,
     launch_menu = {},
-    leader = { key="a", mods="CTRL" },
+    --leader = { key="a", mods="CTRL" },
     disable_default_key_bindings = true,
     keys = {
         -- Send "CTRL-A" to the terminal when pressing CTRL-A, CTRL-A
@@ -62,6 +63,6 @@ config.window_frame = require("rosepine").window_frame()
 config.font = wezterm.font 'FiraCode Nerd Font'
 config.tab_max_width = 16
 
-config.default_prog = {'pwsh.exe'}
+config.default_prog = {'/bin/bash', '-l', '-c', 'tmux attach || tmux'}
 
 return config

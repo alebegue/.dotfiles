@@ -85,8 +85,7 @@ italic.family = "FiraCode Nerd Font"
 normal.family = "FiraCode Nerd Font"
 
 [shell]
-#program = "/usr/bin/fish"
-program = "pwsh"
+program = "/usr/bin/fish"
 args = ["-WorkingDirectory ~",]
 
 [window]

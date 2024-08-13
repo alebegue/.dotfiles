@@ -1,0 +1,6 @@
+RES=$(grep Xft.dpi ~/.Xresources | grep -Eo '[0-9]+')
+if [[ $(basename $0) == "dmenu" ]] ; then
+  /usr/bin/rofi -dpi $RES -dmenu $@
+else
+  /usr/bin/rofi -dpi $RES $@
+fi

@@ -13,7 +13,6 @@ return {
                     "fish",
                     "javascript",
                     "julia",
-                    "latex",
                     "lua",
                     "markdown",
                     "markdown_inline",
