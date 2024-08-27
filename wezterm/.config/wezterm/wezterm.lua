@@ -59,6 +59,7 @@ local config = {
 
 config.colors = require("rosepine").colors()
 config.window_frame = require("rosepine").window_frame()
+config.window_decorations = "NONE"
 
 config.font = wezterm.font 'FiraCode Nerd Font'
 config.tab_max_width = 16
