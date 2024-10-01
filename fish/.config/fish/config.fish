@@ -54,6 +54,7 @@ end
 
 # pyenv
 pyenv init - | source
+set -gx PIP_REQUIRE_VIRTUALENV true
 
 # pixi
 #pixi completion --shell fish | source
