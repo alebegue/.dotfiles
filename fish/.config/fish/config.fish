@@ -36,21 +36,21 @@ set __fish_git_prompt_showupstream none
 set -g fish_prompt_pwd_dir_length 3
 
 function fish_prompt
-    set_color green
+    set_color yellow
     if [ $PWD != $HOME ]
         echo -n (basename $PWD)
     else
         echo -n '~'
     end
-    set_color yellow
-    printf '%s ' (__fish_git_prompt)
     set_color green
-    echo -n '$ '
+    printf '%s ' (__fish_git_prompt)
+    set_color red
+    echo -n '| '
     set_color normal
 end
 
 # Starship
-starship init fish | source
+#starship init fish | source
 
 # pyenv
 pyenv init - | source

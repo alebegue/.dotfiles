@@ -86,12 +86,15 @@ normal.family = "FiraCode Nerd Font"
 
 [shell]
 program = "/usr/bin/fish"
-args = ["-WorkingDirectory ~",]
+#args = ["-WorkingDirectory ~",]
+args = ["-l", "-c", "tmux attach || tmux"]
 
 [window]
 dynamic_title = false
+decorations = "None"
 opacity = 1
 title = "Alacritty"
+startup_mode = "Maximized"
 
 [window.dimensions]
 columns = 150

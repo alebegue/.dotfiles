@@ -3,6 +3,7 @@ return {
     cmd = "CmpStatus",
     config = function()
         local cmp = require("cmp")
+        local lspkind = require("lspkind")
 
         -- From: https://github.com/zbirenbaum/copilot-cmp#tab-completion-configuration-highly-recommended
         -- Unlike other completion sources, copilot can use other lines above or below an empty line to provide a completion.
@@ -53,15 +54,33 @@ return {
                 end,
             },
             sources = cmp.config.sources({
-                { name = "cody" },
                 { name = "nvim_lsp" },
                 { name = "luasnip" },
                 { name = "buffer" },
                 { name = "path" },
             }),
+            window = {
+                completion = {
+                    border = "rounded",
+                    winhighlight = "Normal:CmpNormal",
+                },
+                documentation = {
+                    border = "rounded",
+                    winhighlight = "Normal:CmpDocNormal",
+                }
+            },
+            formatting = {
+                format = lspkind.cmp_format({
+                    mode = "symbol_text",
+                    maxwidth = 50,
+                    ellipsis_char = "...",
+                    show_labelDetails = true,
+                })
+            },
         })
     end,
     dependencies = {
+        { "onsails/lspkind-nvim" },
 		{ "hrsh7th/cmp-nvim-lsp" },
         { "L3MON4D3/LuaSnip" },
 		{ "saadparwaiz1/cmp_luasnip" },
