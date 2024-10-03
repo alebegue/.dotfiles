@@ -43,7 +43,7 @@ M.handlers = {
                             overrides = { "--python-executable", py_path, true },
                             report_progress = true,
                             live_mode = false,
-                            strict = true,
+                            strict = false,
                         },
                     },
                 },
