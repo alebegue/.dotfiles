@@ -22,6 +22,8 @@ return {
 
         cmp.setup({
             mapping = cmp.mapping.preset.insert({
+                ["<C-b>"] = cmp.mapping.scroll_docs(-4),
+                ["<C-f>"] = cmp.mapping.scroll_docs(4),
                 ["<C-c>"] = cmp.mapping.abort(),
                 ["<C-Space>"] = cmp.mapping.complete(),
                 ["<CR>"] = cmp.mapping.confirm({ select = false, behavior = cmp.ConfirmBehavior.Replace }),
@@ -62,20 +64,20 @@ return {
             window = {
                 completion = {
                     border = "rounded",
-                    winhighlight = "Normal:CmpNormal",
+                    --winhighlight = "Normal:CmpNormal",
                 },
                 documentation = {
                     border = "rounded",
-                    winhighlight = "Normal:CmpDocNormal",
+                    --winhighlight = "Normal:CmpDocNormal",
                 }
             },
             formatting = {
-                format = lspkind.cmp_format({
-                    mode = "symbol_text",
-                    maxwidth = 50,
-                    ellipsis_char = "...",
-                    show_labelDetails = true,
-                })
+                --format = lspkind.cmp_format({
+                --    mode = "symbol_text",
+                --    maxwidth = 50,
+                --    ellipsis_char = "...",
+                --    show_labelDetails = true,
+                --})
             },
         })
     end,
