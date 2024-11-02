@@ -9,8 +9,7 @@ return {
                     transparency = true,
                 },
                 highlight_groups = {
-                    MarkdownItalic = { italic = true },
-                    MarkdownBold = { bold = true },
+                    ["@markup.italic.markdown_inline"] = { italic = true },
                 },
             })
 
