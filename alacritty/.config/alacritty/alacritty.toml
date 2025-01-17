@@ -84,7 +84,7 @@ bold_italic.family = "JetBrainsMono Nerd Font"
 italic.family = "JetBrainsMono Nerd Font"
 normal.family = "JetBrainsMono Nerd Font"
 
-[shell]
+[terminal.shell]
 program = "pwsh.exe"
 args = ["-WorkingDirectory ~",]
 #program = "/usr/bin/fish"
