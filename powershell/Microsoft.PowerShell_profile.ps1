@@ -1,5 +1,4 @@
 $ENV:STARSHIP_CONFIG = "$HOME\.dotfiles\starship\.config\starship.toml"
-$ENV:COMSPEC = "$HOME\.config\wezterm\wezterm.lua"
 Invoke-Expression (&starship init powershell)
 
 Set-Alias -Name vim -Value nvim
