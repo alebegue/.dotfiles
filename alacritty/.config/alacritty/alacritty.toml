@@ -79,25 +79,25 @@ TERM = "xterm-256color"
 
 [font]
 size = 12.0
-bold.family = "FiraCode Nerd Font"
-bold_italic.family = "FiraCode Nerd Font"
-italic.family = "FiraCode Nerd Font"
-normal.family = "FiraCode Nerd Font"
+bold.family = "JetBrainsMono Nerd Font"
+bold_italic.family = "JetBrainsMono Nerd Font"
+italic.family = "JetBrainsMono Nerd Font"
+normal.family = "JetBrainsMono Nerd Font"
 
 [shell]
-program = "/usr/bin/fish"
-#args = ["-WorkingDirectory ~",]
-args = ["-l", "-c", "tmux attach || tmux"]
+program = "pwsh.exe"
+#program = "/usr/bin/fish"
+#args = ["-l", "-c", "tmux attach || tmux"]
 
 [window]
-dynamic_title = false
-decorations = "None"
-opacity = 1
-title = "Alacritty"
-startup_mode = "Maximized"
+#dynamic_title = false
+#decorations = "None"
+#opacity = 1
+#title = "Alacritty"
+#startup_mode = "Maximized"
 
 [window.dimensions]
-columns = 150
+columns = 120
 lines = 35
 
 [window.padding]
