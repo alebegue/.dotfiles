@@ -11,6 +11,10 @@ set fish_color_valid_path
 alias vim="nvim"
 alias vi="nvim"
 
+# replace ssh with ssh.exe
+alias ssh="ssh.exe"
+alias ssh-add="ssh-add.exe"
+
 # replace ls with exa
 alias l="eza -l --icons --git -a --no-user"
 alias ll="eza -l --icons --git -a"
@@ -75,3 +79,7 @@ else
     end
 end
 # <<< conda initialize <<<
+
+set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME ; set -gx PATH $HOME/.cabal/bin /home/alebegue/.ghcup/bin $PATH # ghcup-env
+
+source ~/.asdf/asdf.fish
