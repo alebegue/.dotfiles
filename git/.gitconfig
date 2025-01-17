@@ -14,4 +14,3 @@
 	process = git-lfs filter-process
 [core]
 	autocrlf = false
-	sshCommand = ssh.exe
