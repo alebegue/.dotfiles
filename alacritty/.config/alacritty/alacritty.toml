@@ -86,6 +86,7 @@ normal.family = "JetBrainsMono Nerd Font"
 
 [shell]
 program = "pwsh.exe"
+args = ["-WorkingDirectory ~",]
 #program = "/usr/bin/fish"
 #args = ["-l", "-c", "tmux attach || tmux"]
 
