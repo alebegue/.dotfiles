@@ -57,29 +57,26 @@ end
 #starship init fish | source
 
 # pyenv
-pyenv init - | source
-set -gx PIP_REQUIRE_VIRTUALENV true
+#pyenv init - | source
+#set -gx PIP_REQUIRE_VIRTUALENV true
 
 # pixi
 #pixi completion --shell fish | source
 #pixi completion --shell fish | source
 
-# Created by `pipx` on 2024-04-04 07:56:01
-set PATH $PATH /home/alebegue/.local/bin
-
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-if test -f /home/alebegue/miniconda3/bin/conda
-    eval /home/alebegue/miniconda3/bin/conda "shell.fish" "hook" $argv | source
-else
-    if test -f "/home/alebegue/miniconda3/etc/fish/conf.d/conda.fish"
-        . "/home/alebegue/miniconda3/etc/fish/conf.d/conda.fish"
-    else
-        set -x PATH "/home/alebegue/miniconda3/bin" $PATH
-    end
-end
+#if test -f /home/alebegue/miniconda3/bin/conda
+#    eval /home/alebegue/miniconda3/bin/conda "shell.fish" "hook" $argv | source
+#else
+#    if test -f "/home/alebegue/miniconda3/etc/fish/conf.d/conda.fish"
+#        . "/home/alebegue/miniconda3/etc/fish/conf.d/conda.fish"
+#    else
+#        set -x PATH "/home/alebegue/miniconda3/bin" $PATH
+#    end
+#end
 # <<< conda initialize <<<
 
-set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME ; set -gx PATH $HOME/.cabal/bin /home/alebegue/.ghcup/bin $PATH # ghcup-env
+#set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME ; set -gx PATH $HOME/.cabal/bin /home/alebegue/.ghcup/bin $PATH # ghcup-env
 
-source ~/.asdf/asdf.fish
+#source ~/.asdf/asdf.fish
