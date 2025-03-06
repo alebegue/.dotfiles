@@ -88,7 +88,7 @@ normal.family = "JetBrainsMono Nerd Font Mono"
 #program = "pwsh.exe"
 #args = ["-WorkingDirectory ~",]
 program = "/usr/bin/fish"
-args = ["-l", "-c", "tmux attach || tmux"]
+args = ["-l", "-c", "tmux attach || tmux new-session -s 1"]
 
 [window]
 #dynamic_title = false
