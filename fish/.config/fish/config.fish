@@ -57,7 +57,7 @@ end
 #starship init fish | source
 
 # pyenv
-#pyenv init - | source
+pyenv init - fish | source
 #set -gx PIP_REQUIRE_VIRTUALENV true
 
 # pixi
