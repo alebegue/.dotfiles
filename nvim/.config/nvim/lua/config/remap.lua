@@ -40,3 +40,8 @@ end)
 vim.keymap.set("n", "<leader>b", "<cmd>ls<CR>:b<Space>", { silent = true })
 
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
+
+vim.keymap.set("n", "<leader>i", 
+  function() 
+    vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({0}),{0}) 
+end)
