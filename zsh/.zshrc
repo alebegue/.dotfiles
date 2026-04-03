@@ -6,7 +6,10 @@ ZSH_THEME="robbyrussell"
 bindkey -v
 
 # plugins
-plugins=(fzf)
+plugins=(
+    fzf
+    zsh-autosuggestions
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -34,23 +37,11 @@ bindkey -s ^f "tmux-sessionizer\n"
 # use Starship prompt
 eval "$(starship init zsh)"
 
-# use pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-
-# add CUDA
-path+=(
-  /usr/local/cuda-11.7/bin
-)
-
-# add pixi
-export PATH=$PATH:$HOME/.pixi/bin
-# add pixi completion
-eval "$(pixi completion --shell zsh)"
-
-# add Poetry completion
-fpath+=~/.zfunc
-autoload -Uz compinit && compinit
-
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="/opt/nvim-linux-x86_64/bin:$PATH"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+. "$HOME/.cargo/env"

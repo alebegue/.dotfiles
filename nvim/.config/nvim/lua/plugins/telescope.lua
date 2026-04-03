@@ -5,7 +5,7 @@ return {
     },
     {
         "nvim-telescope/telescope.nvim",
-        branch = "0.1.x",
+        version = "0.2.*",
         dependencies = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope-fzf-native.nvim" },
         config = function()
             local telescope = require("telescope")
