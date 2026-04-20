@@ -1,0 +1,70 @@
+{
+  "layer": "top",
+  "position": "top",
+  "modules-left": [
+        "hyprland/workspaces"
+    ],
+  "modules-center": ["clock"],
+  "modules-right": [
+    "pulseaudio",
+    "battery",
+    "network",
+    "cpu",
+    "temperature",
+    "custom/fan",
+    "memory",
+    "custom/lock"
+  ],
+  "hyprland/workspaces": {
+    "format": "{name}: {icon}",
+    "format-icons": {
+      "active": "",
+      "default": ""
+    }
+  },
+  "clock": {
+    "timezone": "Europe/Brussels",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format": "{:%d - %H:%M}"
+  },
+  "network": {
+    "format-wifi": "󰤢 ",
+    "format-ethernet": "󰈀 ",
+    "format-disconnected": "󰤠 ",
+    "interval": 5,
+    "tooltip": false
+  },
+  "cpu": {
+    "interval": 1,
+    "format": "  {icon0}{icon1}{icon2}{icon3} {usage:>2}%",
+    "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"]
+  },
+  "memory": {
+    "interval": 30,
+    "format": "  {used:0.1f}G/{total:0.1f}G"
+  },
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "",
+    "format-icons": {
+      "default": ["", "", " "]
+    },
+    "on-click": "pavucontrol"
+  },
+  "custom/lock": {
+    "tooltip": false,
+    "on-click": "sh -c '(sleep 0.5s; hyprlock)' & disown",
+    "format": ""
+  },
+  "custom/fan": {
+    "exec": "sensors | awk '/Right Side  :/ {print $4,$5}'",
+    "interval": 5
+  },
+  "temperature": {
+    "hwmon-path-abs": "/sys/devices/platform/coretemp.0/hwmon",
+    "input-filename": "temp2_input",
+    "critical-threshold": 80,
+    "format": "{temperatureC}°C {icon}",
+    "format-icons": ["", "", ""]
+  }
+}

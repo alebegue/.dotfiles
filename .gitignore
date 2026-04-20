@@ -1,2 +1,3 @@
 .vscode
 **/nvim/spell/
+lazy-lock.json
